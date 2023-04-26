@@ -44,19 +44,21 @@ public class LoadingScreen : MonoBehaviour
     {
         foreach (var asset in ResourcesAssets)
         {
-            await Task.Delay(5);
+            await Task.Delay(3000);
             asset.LoadFromResources(cancellationToken);
         }
     }
 
+    
     public async Task LoadAllAssetsFromStreamingAssets()
     {
         foreach (var asset in StreamingAssets)
         {
-            await Task.Delay(5);
-            asset.LoadFromStreamingAssets(cancellationToken);
+            await Task.Delay(6000);
+            asset.LoadFromStreamingAssets();
         }
     }
+    
 
     // good for testing!
     [ContextMenu("Cancel")]
